@@ -65,6 +65,49 @@ app.get('/api/seed', async (req, res) => {
                     { name: 'Bahadurgarh', arrival: '11:00', departure: '11:05', day: 1 },
                     { name: 'Rohtak', arrival: '12:00', departure: '12:00', day: 1 }
                 ]
+            },
+            {
+                trainNumber: '12055',
+                trainName: 'Dehradun Jan Shatabdi',
+                totalSeats: 450,
+                stations: [
+                    { name: 'Delhi', arrival: '15:20', departure: '15:20', day: 1 },
+                    { name: 'Meerut', arrival: '16:40', departure: '16:42', day: 1 },
+                    { name: 'Dehradun', arrival: '21:10', departure: '21:10', day: 1 }
+                ]
+            },
+            {
+                trainNumber: '12424',
+                trainName: 'Dibrugarh Rajdhani',
+                totalSeats: 500,
+                stations: [
+                    { name: 'Delhi', arrival: '16:20', departure: '16:20', day: 1 },
+                    { name: 'Kanpur', arrival: '21:05', departure: '21:10', day: 1 },
+                    { name: 'Prayagraj', arrival: '23:00', departure: '23:02', day: 1 },
+                    { name: 'Patna', arrival: '04:00', departure: '04:10', day: 2 }
+                ]
+            },
+            {
+                trainNumber: '12260',
+                trainName: 'Sealdah Duronto',
+                totalSeats: 600,
+                stations: [
+                    { name: 'Delhi', arrival: '19:45', departure: '19:45', day: 1 },
+                    { name: 'Kanpur', arrival: '00:30', departure: '00:35', day: 2 },
+                    { name: 'Sealdah', arrival: '12:30', departure: '12:30', day: 2 }
+                ]
+            },
+            {
+                trainNumber: '12626',
+                trainName: 'Kerala Express',
+                totalSeats: 700,
+                stations: [
+                    { name: 'Delhi', arrival: '20:10', departure: '20:10', day: 1 },
+                    { name: 'Agra', arrival: '22:50', departure: '22:55', day: 1 },
+                    { name: 'Bhopal', arrival: '05:55', departure: '06:00', day: 2 },
+                    { name: 'Nagpur', arrival: '12:30', departure: '12:35', day: 2 },
+                    { name: 'Trivandrum', arrival: '14:30', departure: '14:30', day: 3 }
+                ]
             }
         ];
         await Train.insertMany(trains);
