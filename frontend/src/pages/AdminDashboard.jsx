@@ -22,7 +22,7 @@ const AdminDashboard = () => {
                 },
             };
 
-            await axios.post('http://localhost:5001/api/trains', {
+            await axios.post(`${import.meta.env.VITE_API_URL}/api/trains`, {
                 trainNumber,
                 trainName,
                 stations: stations.split(',').map(s => s.trim()),
@@ -48,7 +48,7 @@ const AdminDashboard = () => {
                             Authorization: `Bearer ${user.token}`,
                         },
                     };
-                    const { data } = await axios.get('http://localhost:5001/api/bookings', config);
+                    const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/bookings`, config);
                     setBookings(data);
                 } catch (error) {
                     console.error(error);

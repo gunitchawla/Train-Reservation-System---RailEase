@@ -24,7 +24,7 @@ const SearchResults = () => {
     useEffect(() => {
         const fetchTrains = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:5001/api/trains/search?from=${from}&to=${to}&date=${date}`);
+                const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/trains/search?from=${from}&to=${to}&date=${date}`);
                 setTrains(data);
             } catch (error) {
                 console.error(error);
@@ -62,7 +62,7 @@ const SearchResults = () => {
             const trainId = selectedTrain.id;
             const cls = selectedClass[trainId] || 'SL';
 
-            await axios.post('http://localhost:5001/api/bookings', {
+            await axios.post(`${import.meta.env.VITE_API_URL}/api/bookings`, {
                 trainNumber: selectedTrain.number,
                 from: from, // These are from the URL/State, which are what the user typed
                 to: to,

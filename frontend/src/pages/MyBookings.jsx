@@ -18,7 +18,7 @@ const MyBookings = () => {
                     },
                 };
 
-                const { data } = await axios.get('http://localhost:5001/api/bookings/mybookings', config);
+                const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/bookings/mybookings`, config);
                 // Sort by created date (newest first)
                 setBookings(data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
             } catch (error) {
@@ -44,7 +44,7 @@ const MyBookings = () => {
                 },
             };
 
-            const response = await axios.delete(`http://localhost:5001/api/bookings/${id}`, config);
+            const response = await axios.delete(`${import.meta.env.VITE_API_URL}/api/bookings/${id}`, config);
             console.log('Cancel response:', response.data);
 
             // Update local state to reflect cancellation
