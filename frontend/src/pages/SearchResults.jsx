@@ -25,7 +25,12 @@ const SearchResults = () => {
         const fetchTrains = async () => {
             try {
                 const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/trains/search?from=${from}&to=${to}&date=${date}`);
-                setTrains(data);
+                if (Array.isArray(data)) {
+                    setTrains(data);
+                } else {
+                    console.error('API returned non-array data:', data);
+                    setTrains([]);
+                }
             } catch (error) {
                 console.error(error);
             } finally {
