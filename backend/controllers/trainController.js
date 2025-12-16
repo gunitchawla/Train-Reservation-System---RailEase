@@ -41,10 +41,11 @@ const searchTrains = async (req, res) => {
         const toRegex = new RegExp(escapeRegex(to), 'i');
 
         // 1. Find trains that have stations matching both queries
+        // 1. Find trains that have stations matching both queries
         const trains = await Train.find({
             $and: [
-                { 'stations.name': { $regex: escapeRegex(from), $options: 'i' } },
-                { 'stations.name': { $regex: escapeRegex(to), $options: 'i' } }
+                { 'stations.name': { $regex: new RegExp(escapeRegex(from), 'i') } },
+                { 'stations.name': { $regex: new RegExp(escapeRegex(to), 'i') } }
             ]
         });
 
