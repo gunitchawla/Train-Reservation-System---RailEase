@@ -1,15 +1,83 @@
 const trains = [
-    // NORTH INDIA
+    // --- RAJDHANI EXPRESS TRAINS ---
+    {
+        trainNumber: '12951',
+        trainName: 'Mumbai Rajdhani',
+        totalSeats: 400,
+        stations: [
+            { name: 'Mumbai Central', arrival: '17:00', departure: '17:00', day: 1 },
+            { name: 'Surat', arrival: '19:32', departure: '19:35', day: 1 },
+            { name: 'Vadodara', arrival: '21:18', departure: '21:28', day: 1 },
+            { name: 'Ratlam', arrival: '01:48', departure: '01:53', day: 2 },
+            { name: 'Kota', arrival: '05:20', departure: '05:25', day: 2 },
+            { name: 'New Delhi', arrival: '08:32', departure: '08:32', day: 2 }
+        ]
+    },
+    {
+        trainNumber: '12301',
+        trainName: 'Howrah Rajdhani',
+        totalSeats: 450,
+        stations: [
+            { name: 'Howrah', arrival: '16:50', departure: '16:50', day: 1 },
+            { name: 'Dhanbad', arrival: '20:00', departure: '20:05', day: 1 },
+            { name: 'Gaya', arrival: '22:57', departure: '23:00', day: 1 },
+            { name: 'Prayagraj', arrival: '04:02', departure: '04:05', day: 2 },
+            { name: 'Kanpur Central', arrival: '06:25', departure: '06:30', day: 2 },
+            { name: 'New Delhi', arrival: '10:05', departure: '10:05', day: 2 }
+        ]
+    },
+    {
+        trainNumber: '12424',
+        trainName: 'Dibrugarh Rajdhani',
+        totalSeats: 420,
+        stations: [
+            { name: 'New Delhi', arrival: '16:20', departure: '16:20', day: 1 },
+            { name: 'Kanpur Central', arrival: '21:02', departure: '21:07', day: 1 },
+            { name: 'Prayagraj', arrival: '23:08', departure: '23:10', day: 1 },
+            { name: 'Patna', arrival: '04:00', departure: '04:10', day: 2 },
+            { name: 'New Jalpaiguri', arrival: '13:25', departure: '13:35', day: 2 },
+            { name: 'Guwahati', arrival: '19:50', departure: '20:05', day: 2 },
+            { name: 'Dibrugarh', arrival: '05:20', departure: '05:20', day: 3 }
+        ]
+    },
+    {
+        trainNumber: '12953',
+        trainName: 'August Kranti Rajdhani',
+        totalSeats: 400,
+        stations: [
+            { name: 'Mumbai Central', arrival: '17:10', departure: '17:10', day: 1 },
+            { name: 'Surat', arrival: '20:50', departure: '20:55', day: 1 },
+            { name: 'Vadodara', arrival: '22:40', departure: '22:50', day: 1 },
+            { name: 'Ratlam', arrival: '02:30', departure: '02:32', day: 2 },
+            { name: 'Kota', arrival: '05:05', departure: '05:10', day: 2 },
+            { name: 'Hazrat Nizamuddin', arrival: '10:55', departure: '10:55', day: 2 }
+        ]
+    },
+    {
+        trainNumber: '12430',
+        trainName: 'Bangalore Rajdhani',
+        totalSeats: 450,
+        stations: [
+            { name: 'Hazrat Nizamuddin', arrival: '20:30', departure: '20:30', day: 1 },
+            { name: 'Bhopal', arrival: '05:55', departure: '06:00', day: 2 },
+            { name: 'Nagpur', arrival: '12:20', departure: '12:25', day: 2 },
+            { name: 'Secunderabad', arrival: '21:30', departure: '21:45', day: 2 },
+            { name: 'Bangalore City', arrival: '06:40', departure: '06:40', day: 3 }
+        ]
+    },
+
+    // --- SHATABDI EXPRESS TRAINS ---
     {
         trainNumber: '12002',
         trainName: 'Bhopal Shatabdi',
-        totalSeats: 500,
+        totalSeats: 550,
         stations: [
-            { name: 'Delhi', arrival: '06:00', departure: '06:15', day: 1 },
-            { name: 'Mathura', arrival: '07:30', departure: '07:35', day: 1 },
-            { name: 'Agra', arrival: '08:10', departure: '08:15', day: 1 },
-            { name: 'Gwalior', arrival: '09:30', departure: '09:35', day: 1 },
-            { name: 'Bhopal', arrival: '14:00', departure: '14:00', day: 1 }
+            { name: 'New Delhi', arrival: '06:00', departure: '06:00', day: 1 },
+            { name: 'Mathura', arrival: '07:19', departure: '07:20', day: 1 },
+            { name: 'Agra Cantt', arrival: '07:50', departure: '07:55', day: 1 },
+            { name: 'Gwalior', arrival: '09:23', departure: '09:28', day: 1 },
+            { name: 'Jhansi', arrival: '10:45', departure: '10:50', day: 1 },
+            { name: 'Bhopal', arrival: '14:07', departure: '14:07', day: 1 }
         ]
     },
     {
@@ -17,9 +85,9 @@ const trains = [
         trainName: 'Lucknow Swarna Shatabdi',
         totalSeats: 600,
         stations: [
-            { name: 'Delhi', arrival: '06:10', departure: '06:10', day: 1 },
+            { name: 'New Delhi', arrival: '06:10', departure: '06:10', day: 1 },
             { name: 'Ghaziabad', arrival: '06:48', departure: '06:50', day: 1 },
-            { name: 'Kanpur', arrival: '11:20', departure: '11:25', day: 1 },
+            { name: 'Kanpur Central', arrival: '11:20', departure: '11:25', day: 1 },
             { name: 'Lucknow', arrival: '12:40', departure: '12:40', day: 1 }
         ]
     },
@@ -28,106 +96,73 @@ const trains = [
         trainName: 'Kalka Shatabdi',
         totalSeats: 550,
         stations: [
-            { name: 'Delhi', arrival: '07:40', departure: '07:40', day: 1 },
+            { name: 'New Delhi', arrival: '07:40', departure: '07:40', day: 1 },
             { name: 'Panipat', arrival: '08:50', departure: '08:52', day: 1 },
-            { name: 'Ambala', arrival: '10:20', departure: '10:25', day: 1 },
+            { name: 'Ambala Cantt', arrival: '10:20', departure: '10:25', day: 1 },
             { name: 'Chandigarh', arrival: '11:05', departure: '11:15', day: 1 },
             { name: 'Kalka', arrival: '11:50', departure: '11:50', day: 1 }
         ]
     },
     {
-        trainNumber: '12055',
-        trainName: 'Dehradun Jan Shatabdi',
-        totalSeats: 450,
-        stations: [
-            { name: 'Delhi', arrival: '15:20', departure: '15:20', day: 1 },
-            { name: 'Meerut', arrival: '16:40', departure: '16:42', day: 1 },
-            { name: 'Dehradun', arrival: '21:10', departure: '21:10', day: 1 }
-        ]
-    },
-    {
-        trainNumber: '12424',
-        trainName: 'Dibrugarh Rajdhani',
+        trainNumber: '12015',
+        trainName: 'Ajmer Shatabdi',
         totalSeats: 500,
         stations: [
-            { name: 'Delhi', arrival: '16:20', departure: '16:20', day: 1 },
-            { name: 'Kanpur', arrival: '21:05', departure: '21:10', day: 1 },
-            { name: 'Prayagraj', arrival: '23:00', departure: '23:02', day: 1 },
-            { name: 'Patna', arrival: '04:00', departure: '04:10', day: 2 },
-            { name: 'Guwahati', arrival: '19:00', departure: '19:15', day: 2 },
-            { name: 'Dibrugarh', arrival: '05:00', departure: '05:00', day: 3 }
-        ]
-    },
-    {
-        trainNumber: '14012',
-        trainName: 'Rohtak Express',
-        totalSeats: 300,
-        stations: [
-            { name: 'Delhi', arrival: '10:00', departure: '10:15', day: 1 },
-            { name: 'Bahadurgarh', arrival: '11:00', departure: '11:05', day: 1 },
-            { name: 'Rohtak', arrival: '12:00', departure: '12:00', day: 1 }
+            { name: 'New Delhi', arrival: '06:10', departure: '06:10', day: 1 },
+            { name: 'Gurgaon', arrival: '06:48', departure: '06:50', day: 1 },
+            { name: 'Jaipur', arrival: '10:40', departure: '10:45', day: 1 },
+            { name: 'Ajmer', arrival: '12:55', departure: '12:55', day: 1 }
         ]
     },
 
-    // WEST INDIA
-    {
-        trainNumber: '12951',
-        trainName: 'Mumbai Rajdhani',
-        totalSeats: 400,
-        stations: [
-            { name: 'Mumbai', arrival: '17:00', departure: '17:00', day: 1 },
-            { name: 'Surat', arrival: '19:30', departure: '19:35', day: 1 },
-            { name: 'Vadodara', arrival: '21:10', departure: '21:20', day: 1 },
-            { name: 'Kota', arrival: '03:00', departure: '03:10', day: 2 },
-            { name: 'Delhi', arrival: '08:30', departure: '08:30', day: 2 }
-        ]
-    },
-    {
-        trainNumber: '12953',
-        trainName: 'August Kranti Rajdhani',
-        totalSeats: 450,
-        stations: [
-            { name: 'Mumbai', arrival: '17:10', departure: '17:10', day: 1 },
-            { name: 'Surat', arrival: '20:50', departure: '20:55', day: 1 },
-            { name: 'Vadodara', arrival: '22:40', departure: '22:50', day: 1 },
-            { name: 'Kota', arrival: '05:00', departure: '05:10', day: 2 },
-            { name: 'Delhi', arrival: '10:55', departure: '10:55', day: 2 }
-        ]
-    },
-    {
-        trainNumber: '12216',
-        trainName: 'Dee Garib Rath',
-        totalSeats: 700,
-        stations: [
-            { name: 'Bandra', arrival: '12:00', departure: '12:00', day: 1 },
-            { name: 'Surat', arrival: '15:10', departure: '15:15', day: 1 },
-            { name: 'Ahmedabad', arrival: '19:00', departure: '19:10', day: 1 },
-            { name: 'Jaipur', arrival: '03:00', departure: '03:10', day: 2 },
-            { name: 'Delhi', arrival: '11:00', departure: '11:00', day: 2 }
-        ]
-    },
-
-    // EAST INDIA
-    {
-        trainNumber: '12301',
-        trainName: 'Howrah Rajdhani',
-        totalSeats: 500,
-        stations: [
-            { name: 'Howrah', arrival: '16:50', departure: '16:50', day: 1 },
-            { name: 'Dhanbad', arrival: '20:00', departure: '20:05', day: 1 },
-            { name: 'Gaya', arrival: '22:50', departure: '22:55', day: 1 },
-            { name: 'Prayagraj', arrival: '04:00', departure: '04:05', day: 2 },
-            { name: 'Delhi', arrival: '10:00', departure: '10:00', day: 2 }
-        ]
-    },
+    // --- DURONTO EXPRESS TRAINS ---
     {
         trainNumber: '12260',
         trainName: 'Sealdah Duronto',
         totalSeats: 600,
         stations: [
-            { name: 'Delhi', arrival: '19:45', departure: '19:45', day: 1 },
-            { name: 'Kanpur', arrival: '00:30', departure: '00:35', day: 2 },
+            { name: 'New Delhi', arrival: '19:45', departure: '19:45', day: 1 },
+            { name: 'Kanpur Central', arrival: '00:30', departure: '00:35', day: 2 },
+            { name: 'Dhanbad', arrival: '08:20', departure: '08:25', day: 2 },
             { name: 'Sealdah', arrival: '12:30', departure: '12:30', day: 2 }
+        ]
+    },
+    {
+        trainNumber: '12220',
+        trainName: 'Secunderabad Duronto',
+        totalSeats: 550,
+        stations: [
+            { name: 'Lokmanya Tilak Terminus', arrival: '23:05', departure: '23:05', day: 1 },
+            { name: 'Pune', arrival: '02:20', departure: '02:25', day: 2 },
+            { name: 'Solapur', arrival: '05:40', departure: '05:45', day: 2 },
+            { name: 'Secunderabad', arrival: '11:05', departure: '11:05', day: 2 }
+        ]
+    },
+
+    // --- POPULAR EXPRESS TRAINS ---
+    {
+        trainNumber: '12626',
+        trainName: 'Kerala Express',
+        totalSeats: 700,
+        stations: [
+            { name: 'New Delhi', arrival: '20:10', departure: '20:10', day: 1 },
+            { name: 'Agra Cantt', arrival: '22:50', departure: '22:55', day: 1 },
+            { name: 'Bhopal', arrival: '05:55', departure: '06:00', day: 2 },
+            { name: 'Nagpur', arrival: '12:30', departure: '12:35', day: 2 },
+            { name: 'Vijayawada', arrival: '22:00', departure: '22:15', day: 2 },
+            { name: 'Trivandrum Central', arrival: '14:30', departure: '14:30', day: 3 }
+        ]
+    },
+    {
+        trainNumber: '12622',
+        trainName: 'Tamil Nadu Express',
+        totalSeats: 650,
+        stations: [
+            { name: 'New Delhi', arrival: '21:05', departure: '21:05', day: 1 },
+            { name: 'Bhopal', arrival: '06:00', departure: '06:05', day: 2 },
+            { name: 'Nagpur', arrival: '12:40', departure: '12:45', day: 2 },
+            { name: 'Vijayawada', arrival: '22:10', departure: '22:20', day: 2 },
+            { name: 'Chennai Central', arrival: '06:15', departure: '06:15', day: 3 }
         ]
     },
     {
@@ -138,35 +173,9 @@ const trains = [
             { name: 'Puri', arrival: '21:45', departure: '21:45', day: 1 },
             { name: 'Bhubaneswar', arrival: '22:50', departure: '22:55', day: 1 },
             { name: 'Kharagpur', arrival: '05:00', departure: '05:05', day: 2 },
-            { name: 'Tata', arrival: '07:00', departure: '07:10', day: 2 },
-            { name: 'Delhi', arrival: '04:00', departure: '04:00', day: 3 }
-        ]
-    },
-
-    // SOUTH INDIA
-    {
-        trainNumber: '12626',
-        trainName: 'Kerala Express',
-        totalSeats: 700,
-        stations: [
-            { name: 'Delhi', arrival: '20:10', departure: '20:10', day: 1 },
-            { name: 'Agra', arrival: '22:50', departure: '22:55', day: 1 },
-            { name: 'Bhopal', arrival: '05:55', departure: '06:00', day: 2 },
-            { name: 'Nagpur', arrival: '12:30', departure: '12:35', day: 2 },
-            { name: 'Vijayawada', arrival: '22:00', departure: '22:15', day: 2 },
-            { name: 'Trivandrum', arrival: '14:30', departure: '14:30', day: 3 }
-        ]
-    },
-    {
-        trainNumber: '12622',
-        trainName: 'Tamil Nadu Express',
-        totalSeats: 650,
-        stations: [
-            { name: 'Delhi', arrival: '21:05', departure: '21:05', day: 1 },
-            { name: 'Bhopal', arrival: '06:00', departure: '06:05', day: 2 },
-            { name: 'Nagpur', arrival: '12:40', departure: '12:45', day: 2 },
-            { name: 'Vijayawada', arrival: '22:10', departure: '22:20', day: 2 },
-            { name: 'Chennai', arrival: '06:15', departure: '06:15', day: 3 }
+            { name: 'Tatanagar', arrival: '07:00', departure: '07:10', day: 2 },
+            { name: 'Kanpur Central', arrival: '21:15', departure: '21:20', day: 2 },
+            { name: 'New Delhi', arrival: '04:00', departure: '04:00', day: 3 }
         ]
     },
     {
@@ -174,23 +183,84 @@ const trains = [
         trainName: 'Karnataka Sampark Kranti',
         totalSeats: 600,
         stations: [
-            { name: 'Delhi', arrival: '08:20', departure: '08:20', day: 1 },
+            { name: 'Hazrat Nizamuddin', arrival: '08:20', departure: '08:20', day: 1 },
             { name: 'Bhopal', arrival: '18:00', departure: '18:10', day: 1 },
             { name: 'Kacheguda', arrival: '06:00', departure: '06:10', day: 2 },
-            { name: 'Bangalore', arrival: '19:00', departure: '19:00', day: 2 }
+            { name: 'Bangalore City', arrival: '19:00', departure: '19:00', day: 2 }
         ]
     },
-
-    // CENTRAL INDIA
     {
         trainNumber: '12156',
         trainName: 'Shan-e-Bhopal Express',
         totalSeats: 500,
         stations: [
-            { name: 'Delhi', arrival: '20:40', departure: '20:40', day: 1 },
-            { name: 'Agra', arrival: '23:30', departure: '23:35', day: 1 },
+            { name: 'Hazrat Nizamuddin', arrival: '20:40', departure: '20:40', day: 1 },
+            { name: 'Agra Cantt', arrival: '23:30', departure: '23:35', day: 1 },
             { name: 'Gwalior', arrival: '01:00', departure: '01:05', day: 2 },
             { name: 'Bhopal', arrival: '06:20', departure: '06:20', day: 2 }
+        ]
+    },
+    {
+        trainNumber: '11058',
+        trainName: 'Amritsar Dadar Express',
+        totalSeats: 600,
+        stations: [
+            { name: 'Amritsar', arrival: '08:50', departure: '08:50', day: 1 },
+            { name: 'Jalandhar City', arrival: '10:00', departure: '10:05', day: 1 },
+            { name: 'Ludhiana', arrival: '11:05', departure: '11:15', day: 1 },
+            { name: 'Ambala Cantt', arrival: '13:00', departure: '13:10', day: 1 },
+            { name: 'New Delhi', arrival: '16:10', departure: '16:25', day: 1 },
+            { name: 'Mathura', arrival: '19:15', departure: '19:20', day: 1 },
+            { name: 'Gwalior', arrival: '21:50', departure: '21:55', day: 1 },
+            { name: 'Bhopal', arrival: '02:50', departure: '02:55', day: 2 },
+            { name: 'Khandwa', arrival: '07:30', departure: '07:35', day: 2 },
+            { name: 'Bhusaval', arrival: '09:40', departure: '09:45', day: 2 },
+            { name: 'Dadar', arrival: '15:55', departure: '15:55', day: 2 }
+        ]
+    },
+    {
+        trainNumber: '12724',
+        trainName: 'Telangana Express',
+        totalSeats: 650,
+        stations: [
+            { name: 'New Delhi', arrival: '16:00', departure: '16:00', day: 1 },
+            { name: 'Agra Cantt', arrival: '18:50', departure: '18:55', day: 1 },
+            { name: 'Bhopal', arrival: '02:00', departure: '02:05', day: 2 },
+            { name: 'Nagpur', arrival: '08:10', departure: '08:15', day: 2 },
+            { name: 'Hyderabad Deccan', arrival: '17:10', departure: '17:10', day: 2 }
+        ]
+    },
+    {
+        trainNumber: '12840',
+        trainName: 'Howrah Mail',
+        totalSeats: 700,
+        stations: [
+            { name: 'Chennai Central', arrival: '23:45', departure: '23:45', day: 1 },
+            { name: 'Vijayawada', arrival: '06:20', departure: '06:30', day: 2 },
+            { name: 'Visakhapatnam', arrival: '13:00', departure: '13:20', day: 2 },
+            { name: 'Bhubaneswar', arrival: '20:10', departure: '20:15', day: 2 },
+            { name: 'Kharagpur', arrival: '01:30', departure: '01:35', day: 3 },
+            { name: 'Howrah', arrival: '03:50', departure: '03:50', day: 3 }
+        ]
+    },
+    {
+        trainNumber: '14012',
+        trainName: 'Rohtak Express',
+        totalSeats: 300,
+        stations: [
+            { name: 'New Delhi', arrival: '10:00', departure: '10:15', day: 1 },
+            { name: 'Bahadurgarh', arrival: '11:00', departure: '11:05', day: 1 },
+            { name: 'Rohtak', arrival: '12:00', departure: '12:00', day: 1 }
+        ]
+    },
+    {
+        trainNumber: '12055',
+        trainName: 'Dehradun Jan Shatabdi',
+        totalSeats: 450,
+        stations: [
+            { name: 'New Delhi', arrival: '15:20', departure: '15:20', day: 1 },
+            { name: 'Meerut City', arrival: '16:40', departure: '16:42', day: 1 },
+            { name: 'Dehradun', arrival: '21:10', departure: '21:10', day: 1 }
         ]
     }
 ];
