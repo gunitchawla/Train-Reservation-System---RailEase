@@ -6,7 +6,10 @@ dotenv.config({ path: './backend/.env' });
 
 const seedTrains = async () => {
     try {
-        await mongoose.connect(process.env.MONGO_URI);
+        await mongoose.connect(process.env.MONGO_URI, {
+            serverSelectionTimeoutMS: 30000, // Increase timeout to 30s
+            socketTimeoutMS: 45000,
+        });
         console.log('MongoDB Connected');
 
         await Train.deleteMany();
