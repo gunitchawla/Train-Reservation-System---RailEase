@@ -41,15 +41,22 @@ const searchTrains = async (req, res) => {
         const toRegex = new RegExp(escapeRegex(to), 'i');
 
         // 1. Find trains that have stations matching both queries
-        // 1. Find trains that have stations matching both queries
-        const trains = await Train.find({
+        const query = {
             $and: [
                 { 'stations.name': { $regex: new RegExp(escapeRegex(from), 'i') } },
                 { 'stations.name': { $regex: new RegExp(escapeRegex(to), 'i') } }
             ]
-        });
+        };
+        console.log('MongoDB Query:', JSON.stringify(query));
+
+        const trains = await Train.find(query);
 
         console.log(`Found ${trains.length} potential trains`);
+        if (trains.length === 0) {
+            // Debug: check if any trains exist at all
+            const count = await Train.countDocuments();
+            console.log(`Total trains in DB: ${count}`);
+        }
 
         const availableTrains = [];
 
